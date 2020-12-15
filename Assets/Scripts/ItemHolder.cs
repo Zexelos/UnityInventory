@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class ItemHolder : MonoBehaviour
@@ -13,12 +11,13 @@ public class ItemHolder : MonoBehaviour
     [SerializeField] TMP_Text tmpText = default;
 
     Vector3 playerRotation;
+    bool shouldDisplayInfo = false;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerRotation = other.transform.localRotation.eulerAngles;
+            shouldDisplayInfo = true;
             ShowItemInfo();
         }
     }
@@ -27,18 +26,27 @@ public class ItemHolder : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            shouldDisplayInfo = false;
             HideItemInfo();
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (shouldDisplayInfo)
+        {
+            playerRotation = other.transform.localRotation.eulerAngles;
+            canvas.transform.eulerAngles = playerRotation;
+            canvas.transform.localPosition = transform.localPosition;
+            canvas.transform.Translate(Vector3.right * offset, Space.Self);
         }
     }
 
     void ShowItemInfo()
     {
         tmpText.gameObject.SetActive(true);
-        canvas.transform.eulerAngles = playerRotation;
-        canvas.transform.localPosition = transform.localPosition;
-        canvas.transform.Translate(Vector3.right * offset, Space.Self);
 
-        tmpText.text = $"Name: {item.Name}\nWeight: {item.Weight}kg";
+        tmpText.text = $"Name: {item.Name}\nWeight: {item.Weight}kg\nPress \"{KeyCode.F}\" to pick up";
     }
 
     public void HideItemInfo()
