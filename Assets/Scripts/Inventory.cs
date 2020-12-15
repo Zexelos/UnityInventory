@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
         {
             if (items == null)
             {
-                if (item.Weight < currentWeight)
+                if (item.Weight <= currentWeight)
                     return true;
                 else
                     return false;
