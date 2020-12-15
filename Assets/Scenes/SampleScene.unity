@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 105226665}
   - component: {fileID: 105226664}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &344209285
 GameObject:
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ee2ed2761d051408608ce08ea7fb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 25ee4539b8c10b94281860bbc19236d3, type: 2}
+  item: {fileID: 11400000, guid: 953e612888c984a429681126c7e0380b, type: 2}
   canvas: {fileID: 984061184}
   offset: 2
   tmpText: {fileID: 1560599815}
@@ -453,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &795824406
 GameObject:
@@ -538,7 +538,7 @@ Transform:
   m_Children:
   - {fileID: 391597579}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &795824412
 MonoBehaviour:
@@ -681,7 +681,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &928776067
 MonoBehaviour:
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ee2ed2761d051408608ce08ea7fb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 25ee4539b8c10b94281860bbc19236d3, type: 2}
+  item: {fileID: 11400000, guid: decfbc8fa653ef045aecb4e61ee686e1, type: 2}
   canvas: {fileID: 984061184}
   offset: 2
   tmpText: {fileID: 1560599815}
@@ -796,8 +796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 795824410}
-  sensitivityHor: 100
-  sensitivityVert: 100
+  sensitivityHor: 150
+  sensitivityVert: 150
   minimumVert: -45
   maximumVert: 45
 --- !u!1 &984061181
@@ -893,7 +893,7 @@ RectTransform:
   m_Children:
   - {fileID: 1560599814}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ee2ed2761d051408608ce08ea7fb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 25ee4539b8c10b94281860bbc19236d3, type: 2}
+  item: {fileID: 11400000, guid: 55c64d132aeb65447a890eab7eb30de7, type: 2}
   canvas: {fileID: 984061184}
   offset: 2
   tmpText: {fileID: 1560599815}
@@ -1210,5 +1210,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

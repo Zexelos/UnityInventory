@@ -13,6 +13,13 @@ public class MouseLook : MonoBehaviour
     //Local variable to keep rotation around x axis
     float rotationX = 0f;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        player.rotation = Quaternion.Euler(Vector3.zero);
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+    }
+
     void Update()
     {
         //Get horizontal mouse input

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
@@ -61,7 +59,7 @@ public class Inventory : MonoBehaviour
                 if (currentItems[i] == null)
                 {
                     currentItems[i] = item;
-                    Debug.Log($"Added: {item.Name}, {item.Weight}");
+                    Debug.Log($"Added: {item.Name}, {item.Weight}kg");
                     currentWeight -= item.Weight;
                     Debug.Log($"Current weight: {currentWeight}kg");
                     itemHolder.HideItemInfo();
@@ -76,19 +74,19 @@ public class Inventory : MonoBehaviour
 
     bool CanAddItem(Item item)
     {
+        int freeSlots = 0;
+
         foreach (var items in currentItems)
         {
             if (items == null)
             {
-                if (item.Weight <= currentWeight)
-                    return true;
-                else
-                    return false;
+                freeSlots++;
             }
-            else
-                return false;
         }
 
-        return false;
+        if (freeSlots > 0 && item.Weight < currentWeight)
+            return true;
+        else
+            return false;
     }
 }
